@@ -6,7 +6,7 @@ import SectionTitle from "../typography/section-title";
 
 export default function ClientsSection() {
   return (
-    <div className="relative mt-40">
+    <div className="relative mt-40 bg-[#d5c1ad]/30 py-40">
       {/* <div className="absolute top-0 left-0 h-20 w-full bg-gradient-to-b from-white"></div> */}
       <MainContainer id="clientas" as="section" className="flex flex-col gap-6">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">

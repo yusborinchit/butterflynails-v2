@@ -23,7 +23,7 @@ export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html
       lang="es"
-      className={`${font.className} scroll-pt-[72px] scroll-smooth text-neutral-950`}
+      className={`${font.className} scroll-pt-[calc(72px+16px)] scroll-smooth text-neutral-950`}
     >
       <body>{children}</body>
     </html>

@@ -15,6 +15,7 @@ export default function ServiceCard({
 }: Readonly<Props>) {
   return (
     <article className="group relative flex aspect-[3/4] flex-col gap-3 overflow-hidden rounded-lg sm:aspect-[3/2] md:aspect-[6/5] xl:aspect-[3/4]">
+      <div className="absolute inset-1.5 z-20 rounded-lg border-5 border-double border-white/40 opacity-0 transition-opacity sm:opacity-100 sm:group-hover:opacity-0"></div>
       <div className="bg-primary-700 absolute inset-0 z-10 flex flex-col gap-4 px-6 py-4 opacity-100 mix-blend-screen transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
         <h3 className="mt-auto text-[38px] leading-[1] font-black text-balance text-white uppercase underline decoration-4">
           {name}.

@@ -23,7 +23,7 @@ export default function QuestionCard({
     <article
       data-inverse={isInverse}
       onClick={() => setIsExpanded(!isExpanded)}
-      className="flex flex-col gap-4 rounded-lg border border-neutral-300 p-6"
+      className="flex flex-col gap-4 rounded-lg bg-white p-6"
     >
       <div className="flex items-center gap-4">
         <h3 className="flex-1 text-2xl font-semibold tracking-tight">
