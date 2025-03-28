@@ -12,8 +12,6 @@ export default function ClientCard({ src, alt }: Readonly<Props>) {
       <Image
         src={src}
         alt={alt}
-        width={450}
-        height={800}
         placeholder="blur"
         className="aspect-3/5 w-full rounded-lg bg-center object-cover"
       />
