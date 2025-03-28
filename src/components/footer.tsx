@@ -3,7 +3,7 @@ import MainContainer from "./containers/main-container";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 mt-56">
+    <footer className="bg-primary-900">
       <MainContainer className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
         <p className="text-lg font-medium tracking-tighter text-white">
           All rights reserved © 2023 Butterfly Nails.

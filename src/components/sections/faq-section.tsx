@@ -5,7 +5,7 @@ import SectionTitle from "../typography/section-title";
 
 export default function FAQSection() {
   return (
-    <div className="bg-[#d5c1ad]/30 py-40">
+    <div className="mt-40 bg-[#d5c1ad]/30 py-40">
       <MainContainer
         id="faq"
         as="section"
