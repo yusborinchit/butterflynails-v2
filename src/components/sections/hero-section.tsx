@@ -15,7 +15,7 @@ export default function HeroSection() {
             Embellece tus uñas con estilo y sofisticación. Tu satisfacción es
             nuestra inspiración.
           </Paragraph>
-          <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:gap-6">
+          <div className="flex w-full flex-col-reverse gap-2 sm:w-auto sm:flex-row sm:gap-6">
             <a
               href="#servicios"
               className="bg-secondary-400 rounded-md px-6 py-3 text-center text-lg font-medium text-white brightness-120"
