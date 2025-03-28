@@ -53,7 +53,7 @@ export default function SignInForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>
-                <span className="text-primary-500">#</span> Usuario
+                <span className="text-primary-500">#</span> Contraseña
               </FormLabel>
               <FormControl>
                 <Input type="password" placeholder="Mika furra..." {...field} />
