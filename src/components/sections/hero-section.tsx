@@ -31,14 +31,14 @@ export default function HeroSection() {
           </div>
         </div>
       </MainContainer>
-      <div className="absolute bottom-0 left-0 -z-20 h-full w-full sm:h-auto md:left-10 md:w-auto">
+      <div className="absolute bottom-0 left-0 -z-20 h-full w-full pt-16 sm:h-auto md:left-10 md:w-auto md:pt-0">
         <Image
           src="/mano-final.webp"
           width={400}
           height={600}
           priority={true}
-          className="max-h-[600px] w-full object-contain md:max-w-[350px] xl:max-h-[650px]"
           alt="Unas manos con las uñas pintadas y una mariposa posando en ellas."
+          className="animate-in slide-in-from-bottom md:slide-in-from-left md:slide-in-from-bottom-0 fade-in max-h-[600px] w-full object-contain duration-[1500ms] md:max-w-[350px]"
         />
       </div>
       <div className="absolute right-10 bottom-0 -z-10 hidden md:inline">
@@ -47,8 +47,8 @@ export default function HeroSection() {
           width={350}
           height={600}
           priority={true}
-          className="max-h-[600px] max-w-[350px] object-contain"
           alt="Una pila de bottelas de esmalte."
+          className="animate-in slide-in-from-right fade-in max-h-[600px] max-w-[350px] object-contain transition-[transformX] duration-[1500ms]"
         />
       </div>
     </section>
