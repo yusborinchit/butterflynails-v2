@@ -31,18 +31,18 @@ export default function BookingEmail({
         Butterfly Nails: Tu cita está confirmada para el {date} a las {time}
       </Preview>
       <Tailwind>
-        <Body className="bg-[#f5f5f5] font-sans">
+        <Body className="bg-[#d5c1ad]/10 font-sans">
           <Container className="mx-auto my-[40px] max-w-[600px]">
-            <Section className="rounded-t-[8px] bg-[#400101] p-[32px] text-center">
+            <Section className="rounded-t-[8px] bg-[#300a0e] p-[32px] text-center">
               <Heading className="m-0 text-[28px] font-bold text-white">
                 Butterfly Nails
               </Heading>
               <Text className="mt-[4px] mb-0 text-[16px] text-white">
-                Nails Boutique
+                Home Studio
               </Text>
             </Section>
             <Section className="bg-white p-[32px]">
-              <Heading className="mt-0 mb-[24px] text-[22px] font-bold text-[#400101]">
+              <Heading className="mt-0 mb-[24px] text-[22px] font-bold text-[#52141b]">
                 Confirmación de Cita
               </Heading>
               <Text className="mb-[16px] text-[16px] text-gray-800">
@@ -51,7 +51,7 @@ export default function BookingEmail({
               <Text className="mb-[24px] text-[16px] text-gray-800">
                 Tu cita ha sido reservada con éxito. ¡Esperamos verte pronto!
               </Text>
-              <Section className="mb-[24px] rounded-[6px] border-l-[4px] border-[#73020c] bg-[#f9f9f9] p-[20px]">
+              <Section className="mb-[24px] rounded-[6px] bg-[#d5c1ad]/30 px-[20px] py-[8px]">
                 <Text className="m-0 mb-[2px] text-[15px] text-gray-800">
                   <span className="inline-block w-[70px] font-bold text-black">
                     Servicio:
@@ -72,39 +72,45 @@ export default function BookingEmail({
                 </Text>
               </Section>
               <Section className="mb-[32px]">
-                <Heading className="mt-0 mb-[16px] text-[18px] font-bold text-[#590209]">
+                <Heading className="mt-0 mb-[16px] text-[18px] font-bold text-[#52141b]">
                   Información Importante
                 </Heading>
                 <Text className="mb-[8px] text-[15px] text-gray-800">
-                  • Por favor, llega 5-10 minutos antes de la hora de tu cita
+                  • Hay 20 minutos de tolerancia de espera.
                 </Text>
                 <Text className="mb-[8px] text-[15px] text-gray-800">
-                  • Si necesitas cancelar, hazlo con al menos 24 horas de
-                  anticipación
+                  • La seña es del 50% del total del servicio
+                </Text>
+                <Text className="mb-[8px] text-[15px] text-gray-800">
+                  • Se necesitan 24 horas de anticipación para cancelar
                 </Text>
                 <Text className="mb-0 text-[15px] text-gray-800">
-                  • Para cualquier consulta, llámanos al (123) 456-7890
+                  • Para cualquier consulta, mandar mensaje a{" "}
+                  <a
+                    href="https://www.instagram.com/butterfly_nailx/"
+                    className="underline"
+                  >
+                    @butterfly_nailx
+                  </a>
                 </Text>
               </Section>
             </Section>
-            <Section className="rounded-b-[8px] bg-[#400101] p-[24px] text-center">
-              <Text className="mb-[8px] text-[14px] text-white">
-                Butterfly Nails - Nails Boutique
+            <Section className="rounded-b-[8px] bg-[#300a0e] p-[24px] text-center">
+              <Text className="mb-[2px] text-[14px] text-white">
+                Butterfly Nails - Home Studio
               </Text>
               <Text className="m-0 text-[14px] text-white opacity-80">
-                Instagram: @butterfly_nailx
+                Instagram:{" "}
+                <a
+                  href="https://www.instagram.com/butterfly_nailx/"
+                  className="underline"
+                >
+                  @butterfly_nailx
+                </a>
               </Text>
               <Hr className="my-[16px] border-[#723333]" />
               <Text className="m-0 text-[12px] text-white opacity-70">
                 © 2025 Butterfly Nails. Todos los derechos reservados.
-              </Text>
-              <Text className="mt-[8px] mb-0 text-[12px] text-white opacity-70">
-                <a
-                  href="https://butterflynails.com/unsubscribe"
-                  className="text-white underline"
-                >
-                  Cancelar suscripción
-                </a>
               </Text>
             </Section>
           </Container>

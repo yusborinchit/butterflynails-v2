@@ -1,9 +1,14 @@
 "use server";
 
+import dayjs from "dayjs";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { Resend } from "resend";
 import { z } from "zod";
+import BookingEmail from "~/components/emails/booking-email";
+import { env } from "~/env";
+import { getCachedBookingTimes, getCachedServices } from "~/lib/cache";
 import {
   bookingFormSchema,
   cancelDayFormSchema,
@@ -14,6 +19,8 @@ import {
 } from "~/lib/zod-schemas";
 import { type bookings } from "./db/schema";
 import { MUTATIONS, QUERIES } from "./db/sql";
+
+const resend = new Resend(env.RESEND_API_KEY);
 
 export async function createBookingAction(
   formData: z.infer<typeof bookingFormSchema>,
@@ -31,6 +38,26 @@ export async function createBookingAction(
   if (!result) return { success: false };
 
   revalidatePath("/");
+
+  const [services, bookingTimes] = await Promise.all([
+    getCachedServices(),
+    getCachedBookingTimes(),
+  ]);
+
+  const service = services.find(({ id }) => id === booking.serviceId)!;
+  const bookingTime = bookingTimes.find(({ id }) => id === booking.timeId)!;
+
+  await resend.emails.send({
+    from: "Butterfly Nails <notificaciones@butterflynails.shop>",
+    to: ["butterfly.notificaciones@gmail.com", booking.email],
+    subject: `Notificación de ${service.name} el día ${dayjs(booking.date).format("DD/MM/YYYY")} a las ${bookingTime.time} hs para ${booking.name}`,
+    react: BookingEmail({
+      name: booking.name,
+      date: booking.date,
+      time: bookingTime.time,
+      service: service.name,
+    }),
+  });
 
   const bookingUrl = `/booking-info?date=${booking.date}&timeId=${booking.timeId}&serviceId=${booking.serviceId}`;
   redirect(bookingUrl);

@@ -78,20 +78,10 @@
 }
 
 @theme {
-  /* ORIGINAL */
-  /* --color-primary-900: #260101;
-  --color-primary-700: #400101;
-  --color-primary-600: #590209;
-  --color-primary-500: #73020c; */
-
   --color-primary-900: #300a0e;
   --color-primary-700: #52141b;
   --color-primary-600: #731d26;
   --color-primary-500: #8b1f28;
-
-  /* ORIGINAL */
-  /* --color-secondary-500: #632121;
-  --color-secondary-400: #723333; */
 
   --color-secondary-500: #6b1a20;
   --color-secondary-400: #822930;
