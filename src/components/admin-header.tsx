@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import MainContainer from "./containers/main-container";
@@ -12,6 +13,8 @@ import {
 } from "./ui/dropdown-menu";
 
 export default function AdminHeader() {
+  const year = dayjs().get("year");
+
   return (
     <MainContainer
       as="header"
@@ -34,6 +37,9 @@ export default function AdminHeader() {
           </DropdownMenuLabel>
           <DropdownMenuItem asChild className="hover:cursor-pointer">
             <Link href="/admin">Administrar Turnos</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild className="hover:cursor-pointer">
+            <Link href={`/admin/stats/${year}`}>Ver Estadísticas</Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuLabel className="text-xs font-bold">

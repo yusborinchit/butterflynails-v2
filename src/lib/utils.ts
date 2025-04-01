@@ -8,3 +8,18 @@ export function cn(...inputs: ClassValue[]) {
 export function parsePhoneToWSP(phone: string) {
   return `598${phone.startsWith("0") ? phone.substring(1) : phone}`;
 }
+
+export const MONTHS = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre",
+];

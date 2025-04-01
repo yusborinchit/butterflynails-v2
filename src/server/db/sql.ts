@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { asc, eq, gte } from "drizzle-orm";
+import { asc, eq, gte, sql } from "drizzle-orm";
 import { db } from ".";
 import { bookings, bookingTimes, services } from "./schema";
 
@@ -18,6 +18,33 @@ export const QUERIES = {
       .innerJoin(services, eq(bookings.serviceId, services.id))
       .where(gte(bookings.date, dayjs().format("YYYY-MM-DD")))
       .orderBy(asc(bookings.date), asc(bookingTimes.time));
+  },
+  getYearlyBookingsCount: async (
+    year: string,
+  ): Promise<{ month: string; serviceId: number; count: number }[]> => {
+    return db.execute(
+      sql`
+        WITH months AS (
+          SELECT generate_series(
+              '${sql.raw(year)}-01-01'::date, 
+              '${sql.raw(year)}-12-01'::date, 
+              '1 month'::interval
+          ) AS month
+        )
+        SELECT 
+            TO_CHAR(m.month, 'YYYY-MM-DD') AS month,
+            s.id AS "serviceId",
+            COALESCE(COUNT(b.id), 0)::int AS count
+        FROM months m
+        CROSS JOIN "bn-v2_service" s
+        LEFT JOIN "bn-v2_booking" b 
+            ON DATE_TRUNC('month', b.date) = m.month 
+            AND b.service_id = s.id
+            AND b.is_enabled = true
+        GROUP BY m.month, s.id
+        ORDER BY m.month, count DESC;
+      `,
+    );
   },
 };
 

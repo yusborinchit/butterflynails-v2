@@ -18,3 +18,11 @@ export const getCachedBookingTimes = unstable_cache(
     revalidate: DAY_IN_SECONDS,
   },
 );
+
+export const getCachedYearlyBookingsCount = unstable_cache(
+  QUERIES.getYearlyBookingsCount,
+  ["yearlyBookingsCount"],
+  {
+    revalidate: DAY_IN_SECONDS,
+  },
+);
