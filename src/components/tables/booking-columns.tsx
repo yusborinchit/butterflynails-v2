@@ -15,7 +15,7 @@ export const columns: ColumnDef<
     accessorKey: "booking.date",
     header: () => <div className="text-center font-bold">Día</div>,
     cell: ({ row }) => (
-      <div className="text-center text-neutral-500">
+      <div className="text-center font-mono text-neutral-500">
         {dayjs(row.original.booking.date).format("DD/MM/YYYY")}
       </div>
     ),
@@ -24,16 +24,16 @@ export const columns: ColumnDef<
     accessorKey: "booking_time",
     header: () => <div className="text-center font-bold">Hora</div>,
     cell: ({ row }) => (
-      <div className="text-center text-neutral-500">
+      <div className="text-center font-mono text-neutral-500">
         {row.original.booking_time.time}
       </div>
     ),
   },
   {
     accessorKey: "booking.username",
-    header: () => <div className="text-center font-bold">Usuario de IG</div>,
+    header: () => <div className="font-bold">Usuario de IG</div>,
     cell: ({ row }) => (
-      <div className="text-center text-neutral-500">
+      <div className="text-neutral-500">
         <a
           target="_blank"
           href={`https://www.instagram.com/${row.original.booking.username}/`}
@@ -46,20 +46,16 @@ export const columns: ColumnDef<
   },
   {
     accessorKey: "booking.name",
-    header: () => <div className="text-center font-bold">Nombre</div>,
+    header: () => <div className="font-bold">Nombre</div>,
     cell: ({ row }) => (
-      <div className="text-center text-neutral-500">
-        {row.original.booking.name}
-      </div>
+      <div className="text-neutral-500">{row.original.booking.name}</div>
     ),
   },
   {
     accessorKey: "service",
-    header: () => <div className="text-center font-bold">Servicio</div>,
+    header: () => <div className="font-bold">Servicio</div>,
     cell: ({ row }) => (
-      <div className="text-center text-neutral-500">
-        {row.original.service.name}
-      </div>
+      <div className="text-neutral-500">{row.original.service.name}</div>
     ),
   },
   {
@@ -70,7 +66,7 @@ export const columns: ColumnDef<
         <a
           target="_blank"
           href={`https://wa.me/${parsePhoneToWSP(row.original.booking.phone)}/`}
-          className="underline underline-offset-3"
+          className="font-mono underline underline-offset-3"
         >
           {row.original.booking.phone}
         </a>
@@ -81,7 +77,7 @@ export const columns: ColumnDef<
     accessorKey: "booking.ci",
     header: () => <div className="text-center font-bold">Cédula</div>,
     cell: ({ row }) => (
-      <div className="text-center text-neutral-500">
+      <div className="text-center font-mono text-neutral-500">
         {row.original.booking.ci}
       </div>
     ),
