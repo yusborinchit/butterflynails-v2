@@ -25,6 +25,7 @@ export default function FAQSection() {
             <QuestionCard
               question="Las Soft Gel requieren mantenimiento"
               answer="No exactamente. Cada 21 días deben retirarse por completo y volver a aplicarse."
+              enterFrom="left"
             />
             <QuestionCard
               question="Por qué es necesario venir cada 21 días"
@@ -32,16 +33,19 @@ export default function FAQSection() {
               Esto podría permitir la acumulación de humedad y favorecer infecciones como Pseudomonas (bacteria)
               o infecciones fúngicas (onicomicosis, un hongo). Al asistir cada 21 días, se pueden detectar a tiempo
               y evitar riesgos. No realizo servicios sobre uñas con infecciones, hongos o dañadas."
+              enterFrom="left"
               defaultExpanded={true}
             />
             <QuestionCard
               question="Cómo cuidar mis uñas para que duren intactas los 21 días"
               answer="Usa guantes para tareas domésticas, evita exponerlas a la humedad por períodos prolongados,
               no te las lleves a la boca y ten cuidado con golpes (al teclear, abrir objetos, etc.)."
+              enterFrom="left"
             />
             <QuestionCard
               question="Hay que pagar seña para el servicio"
               answer="Si, la seña es del 50% del total del servicio."
+              enterFrom="left"
               defaultExpanded={true}
             />
           </div>
@@ -49,7 +53,7 @@ export default function FAQSection() {
             <QuestionCard
               question="Pueden atenderse menores de 15 años"
               answer="Sí, pero deben venir acompañados por un adulto responsable."
-              isInverse={true}
+              enterFrom="right"
               defaultExpanded={true}
             />
             <QuestionCard
@@ -57,19 +61,19 @@ export default function FAQSection() {
               answer="No. Si solo hay humedad, se limpiará la uña y se podrá realizar el servicio cuando esté
               completamente seca. Sin embargo, si se ha desarrollado un hongo, es necesario tratarlo con un médico
               antes de realizar cualquier aplicación."
-              isInverse={true}
+              enterFrom="right"
             />
             <QuestionCard
               question="Qué debo hacer después de agendar"
               answer="Una vez que reserves tu cita, contáctame por Instagram para definir el diseño,
               confirmar el presupuesto exacto y recibir la ubicación del estudio."
-              isInverse={true}
+              enterFrom="right"
               defaultExpanded={true}
             />
             <QuestionCard
               question="Puedo venir con acompañante"
               answer="No, el servicio se realiza sin acompañantes."
-              isInverse={true}
+              enterFrom="right"
             />
           </div>
         </div>

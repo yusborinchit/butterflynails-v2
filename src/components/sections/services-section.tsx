@@ -23,7 +23,7 @@ export default function ServicesSection({ services }: Readonly<Props>) {
           satisfacer todas tus necesidades.
         </Paragraph>
       </MainContainer>
-      <div className="grid w-full gap-5 px-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid w-full gap-5 px-5 md:grid-cols-2 xl:-mt-6 xl:grid-cols-4">
         {services.map((service) => (
           <ServiceCard
             key={service.id}

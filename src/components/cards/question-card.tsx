@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import Paragraph from "../typography/paragraph";
@@ -7,21 +8,27 @@ import Paragraph from "../typography/paragraph";
 interface Props {
   question: string;
   answer: string;
+  enterFrom: "left" | "right";
   defaultExpanded?: boolean;
-  isInverse?: boolean;
 }
 
 export default function QuestionCard({
   question,
   answer,
+  enterFrom,
   defaultExpanded = false,
-  isInverse = false,
 }: Readonly<Props>) {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
 
   return (
-    <article
-      data-inverse={isInverse}
+    <motion.article
+      initial={{
+        opacity: 0,
+        translateX: enterFrom === "left" ? "-7.5rem" : "7.5rem",
+      }}
+      whileInView={{ opacity: 1, translateX: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, amount: "some" }}
       onClick={() => setIsExpanded(!isExpanded)}
       className="flex flex-col gap-4 rounded-lg bg-white p-6"
     >
@@ -42,6 +49,6 @@ export default function QuestionCard({
           <Paragraph>{answer}</Paragraph>
         </>
       )}
-    </article>
+    </motion.article>
   );
 }

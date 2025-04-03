@@ -1,10 +1,10 @@
-import Image from "next/image";
 import MainContainer from "../containers/main-container";
+import HeroImages from "../hero-images";
 import Paragraph from "../typography/paragraph";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-t from-white via-white/90 via-70% sm:via-40% lg:via-20% xl:via-transparent">
+    <section className="relative w-full overflow-hidden bg-gradient-to-t from-white via-white/90 via-70% sm:via-40% lg:via-transparent">
       <MainContainer className="grid min-h-[calc(100vh-72px)] place-items-center">
         <div className="z-20 flex flex-col items-center gap-6">
           <h1 className="flex flex-col text-center text-7xl leading-[0.85] font-bold tracking-tighter sm:text-8xl md:text-9xl">
@@ -31,26 +31,7 @@ export default function HeroSection() {
           </div>
         </div>
       </MainContainer>
-      <div className="absolute bottom-0 left-0 -z-20 h-full w-full pt-16 sm:h-auto md:left-10 md:w-auto md:pt-0">
-        <Image
-          src="/mano-final.webp"
-          width={400}
-          height={600}
-          priority={true}
-          alt="Unas manos con las uñas pintadas y una mariposa posando en ellas."
-          className="animate-in slide-in-from-bottom md:slide-in-from-left md:slide-in-from-bottom-0 fade-in max-h-[600px] w-full object-contain duration-[1500ms] md:max-w-[350px]"
-        />
-      </div>
-      <div className="absolute right-10 bottom-0 -z-10 hidden md:inline">
-        <Image
-          src="/nail-paint-final.webp"
-          width={350}
-          height={600}
-          priority={true}
-          alt="Una pila de bottelas de esmalte."
-          className="animate-in slide-in-from-right fade-in max-h-[600px] max-w-[350px] object-contain transition-[transformX] duration-[1500ms]"
-        />
-      </div>
+      <HeroImages />
     </section>
   );
 }
