@@ -4,7 +4,7 @@ import Paragraph from "../typography/paragraph";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-t from-white via-white/90 via-70% sm:via-40% lg:via-transparent">
+    <section className="relative w-full overflow-hidden bg-gradient-to-t from-white via-white via-40% to-transparent sm:via-20% lg:via-transparent">
       <MainContainer className="grid min-h-[calc(100vh-72px)] place-items-center">
         <div className="z-20 flex flex-col items-center gap-6">
           <h1 className="flex flex-col text-center text-7xl leading-[0.85] font-bold tracking-tighter sm:text-8xl md:text-9xl">
