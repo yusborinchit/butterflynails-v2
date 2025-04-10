@@ -25,7 +25,8 @@ export default function Header() {
     <>
       <div
         data-open={isOpen}
-        className="bg-opacity-60 data-[open=true]:bg-primary-900/60 bg-primary-900/0 pointer-events-none fixed inset-0 z-30 h-screen w-screen opacity-0 backdrop-blur-sm transition-opacity data-[open=true]:opacity-100 sm:hidden"
+        onClick={() => setIsOpen(false)}
+        className="bg-opacity-60 data-[open=true]:bg-primary-900/60 bg-primary-900/0 fixed inset-0 z-30 h-screen w-screen opacity-0 backdrop-blur-sm transition-opacity data-[open=true]:opacity-100 sm:hidden"
       ></div>
       <div className="sticky top-0 left-0 z-30 bg-white">
         <MainContainer as="header" className="flex h-[72px] items-center py-2">
