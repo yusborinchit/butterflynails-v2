@@ -39,7 +39,7 @@ export const columns: ColumnDef<
           href={`https://www.instagram.com/${row.original.booking.username}/`}
           className="underline underline-offset-3"
         >
-          @{row.original.booking.username}
+          @{row.original.booking.username.replaceAll("@", "").trimEnd()}
         </a>
       </div>
     ),

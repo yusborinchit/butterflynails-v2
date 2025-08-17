@@ -48,7 +48,7 @@ export async function createBookingAction(
   const bookingTime = bookingTimes.find(({ id }) => id === booking.timeId)!;
 
   await resend.emails.send({
-    from: "Butterfly Nails <notificaciones@butterflynails.shop>",
+    from: "Butterfly Nails <notificaciones@butterflynails.store>",
     to: ["butterfly.notificaciones@gmail.com", booking.email],
     subject: `Notificación de ${service.name} el día ${dayjs(booking.date).format("DD/MM/YYYY")} a las ${bookingTime.time} hs para ${booking.name}`,
     react: BookingEmail({
