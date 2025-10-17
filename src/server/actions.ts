@@ -143,7 +143,10 @@ export async function editBookingTimeAction(
   const { success, data } = editBookingTimeFormSchema.safeParse(formData);
   if (!success) return { success: false };
 
-  const [result] = await MUTATIONS.updateBookingTime(data);
+  const [result] = await MUTATIONS.updateBookingTime({
+    ...data,
+    enabled: true,
+  });
   if (!result) return { success: false };
 
   revalidatePath("/");
