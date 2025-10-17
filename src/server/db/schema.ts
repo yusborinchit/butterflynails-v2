@@ -12,6 +12,7 @@ export const createTable = pgTableCreator((name) => `bn-v2_${name}`);
 export const bookingTimes = createTable("booking_time", {
   id: serial("id").primaryKey(),
   time: varchar("time", { length: 5 }).notNull().unique(),
+  enabled: boolean("is_enabled").default(true),
 });
 
 export const services = createTable("service", {

@@ -8,7 +8,11 @@ export const QUERIES = {
     return db.select().from(services).orderBy(services.id);
   },
   getBookingTimes: async () => {
-    return db.select().from(bookingTimes).orderBy(bookingTimes.time);
+    return db
+      .select()
+      .from(bookingTimes)
+      .where(eq(bookingTimes.enabled, true))
+      .orderBy(bookingTimes.time);
   },
   getCurrentBookings: async () => {
     return db
@@ -85,7 +89,8 @@ export const MUTATIONS = {
     bookingTimeId: typeof bookingTimes.$inferSelect.id,
   ) => {
     return db
-      .delete(bookingTimes)
+      .update(bookingTimes)
+      .set({ enabled: false })
       .where(eq(bookingTimes.id, bookingTimeId))
       .returning({ id: bookingTimes.id });
   },
