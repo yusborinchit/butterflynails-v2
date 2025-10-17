@@ -17,6 +17,8 @@ export default function BookingCalendar({
 }: Readonly<Props>) {
   const todayDate = dayjs().toDate();
 
+  console.log(bookingTimes);
+
   return (
     <Calendar
       locale="es"
@@ -27,13 +29,19 @@ export default function BookingCalendar({
       }}
       tileClassName={(args) => {
         const date = dayjs(args.date);
+        const dateString = date.format("YYYY-MM-DD");
 
         const isSunday = date.day() === 0;
         if (isSunday) return "red-tiles";
 
-        const dateString = date.format("YYYY-MM-DD");
         const dayBookings = bookings.filter((b) => b.date === dateString);
-        const isDayFull = dayBookings.length === bookingTimes.length;
+        const bookedTimeIds = dayBookings.map((b) => b.timeId);
+
+        const availableTimes = bookingTimes.filter(
+          (time) => !bookedTimeIds.includes(time.id),
+        );
+
+        const isDayFull = availableTimes.length === 0;
 
         return isDayFull ? "red-tiles" : "";
       }}
